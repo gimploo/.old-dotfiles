@@ -27,7 +27,7 @@ set belloff=all
 call plug#begin('~/.vim/plugged')
 Plug 'git@github.com:ycm-core/YouCompleteMe.git'
 Plug 'morhetz/gruvbox'
-Pug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
