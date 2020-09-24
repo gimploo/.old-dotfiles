@@ -1,3 +1,4 @@
+set nocompatible
 set number
 syntax on
 set cursorline
@@ -5,7 +6,7 @@ set t_Co=256
 set relativenumber
 set incsearch
 set smartindent
-set nocompatible
+let mapleader = " "
 
 filetype plugin on
 filetype indent on 
@@ -32,13 +33,23 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
+" Setting the colorscheme and the background color
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
-
 set background=dark
 
-"Uncomment the below two and comment the above two lines to get back the old
-"orange scheme
+" Remaped the jumps bw splited windows 
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
 
+" Explore page 
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+
+" YCM
+nnoremap <silent> <leader>gd :YCMCompleter GoTo<CR>
+
+"Old colorscheme 
 "colorscheme fahrenheit
 "let g:airline_theme='fahrenheit' 
