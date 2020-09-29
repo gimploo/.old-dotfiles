@@ -6,6 +6,7 @@ set t_Co=256
 set relativenumber
 set incsearch
 set smartindent
+set linebreak
 let mapleader = " "
 
 filetype plugin on
@@ -29,7 +30,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch':'release'}
-Plug 'vimwiki/vimwiki'
+Plug 'suan/vim-instant-markdown', {'for':'markdown'}
 Plug 'mbbill/undotree'
 Plug 'scrooloose/nerdcommenter'
 
@@ -48,6 +49,11 @@ nnoremap <leader>l :wincmd l<CR>
 
 " nerdcommenter commenting  
 map <leader>/ <plug>NERDCommenterToggle
+
+" vimwiki
+map <leader>md :InstantMarkdownPreview<CR>
+let g:vimwiki_ext2syntax = {'.md':'markdown','.markdown':'markdown','.mdown':'markdown'} "markdown support
+let g:instant_markdown_autostart = 0 " disable autostart 
 
 " Explore page 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
@@ -123,9 +129,9 @@ endif
 
 " GoTo code navigation.
 nmap <silent><leader>gd <Plug>(coc-definition)
-nmap <silent><leader> gy <Plug>(coc-type-definition)
-nmap <silent><leader> gi <Plug>(coc-implementation)
-nmap <silent><leader> gr <Plug>(coc-references)
+nmap <silent><leader>gy <Plug>(coc-type-definition)
+nmap <silent><leader>gi <Plug>(coc-implementation)
+nmap <silent><leader>gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
