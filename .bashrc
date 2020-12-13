@@ -118,7 +118,21 @@ fi
 
 # Rust 
 export PATH="$HOME/.cargo/bin:$PATH"
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u:\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+# New prompt
+export PS1='\[\033[01;32m\]\u \[\033[01;34m\]\w\[\033[00m\] $ '
 
 # Disable ctrl-s and ctrl-q
 stty -ixon 
+
+# including .dircolors file 
+[[ -e $HOME/.dircolors ]] && eval "`dircolors --sh $HOME/.dircolors`"
+
+# running cht.sh tab completion
+~/.bash.d/cht.sh
+
+# Start tmux as defualt
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+        #tmux attach -t default || tmux new -s default
+#fi
+
