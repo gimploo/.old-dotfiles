@@ -17,11 +17,11 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"if exists('+termguicolors')  
-    "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    "set termguicolors
-"endif
+if exists('+termguicolors')  
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
 
 set mouse=n
 set belloff=all
@@ -35,6 +35,7 @@ Plug 'suan/vim-instant-markdown', {'for':'markdown'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'vimwiki/vimwiki'
+Plug 'sakshamgupta05/vim-todo-highlight'
 Plug 'mbbill/undotree'
 Plug 'scrooloose/nerdcommenter'
 
@@ -83,6 +84,23 @@ let g:coc_global_extensions = [
             \ 'coc-clangd',
             \ 'coc-sh',
             \]
+"-----------------------------------------------------------------------------
+" vim todo highlight
+"-----------------------------------------------------------------------------
+
+let g:todo_highlight_config = {
+        \'TODO': {
+            \'gui_fg_color': '#ff3300',
+            \'gui_bg_color': '#1d2021' 
+        \},
+        \'FIXME': {
+            \'gui_fg_color': '#ff6600',
+            \'gui_bg_color': '#1d2021' 
+        \}
+    \}
+
+" FIXME:
+" TODO: dkfjdkfj
 
 " -----------------------------------------------------------------------------
 " Airline config
