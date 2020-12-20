@@ -88,19 +88,26 @@ let g:coc_global_extensions = [
 " vim todo highlight
 "-----------------------------------------------------------------------------
 
+"\'gui_bg_color': '#1d2021' 
 let g:todo_highlight_config = {
         \'TODO': {
-            \'gui_fg_color': '#ff3300',
-            \'gui_bg_color': '#1d2021' 
+            \'gui_bg_color': '#ff3300',
+            \'gui_fg_color': '#ffffff'
         \},
         \'FIXME': {
-            \'gui_fg_color': '#ff6600',
-            \'gui_bg_color': '#1d2021' 
+            \'gui_bg_color': '#ff6600',
+            \'gui_fg_color': '#ffffff'
+        \},
+        \'NOTE': {
+            \'gui_bg_color' : '#00ffff',
+            \'gui_fg_color': '#000000'
         \}
     \}
 
 " FIXME:
+" NOTE:
 " TODO: dkfjdkfj
+" NOTE(hell):
 
 " -----------------------------------------------------------------------------
 " Airline config
