@@ -52,9 +52,12 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
+" Jumping between buffers
+nnoremap <leader>. :bn<CR>
+nnoremap <leader>, :bp<CR>
 " Jumping between tabs
-nnoremap <leader>, :tabr<CR>
-nnoremap <leader>. :tabl<CR>
+"nnoremap <leader>. :tabn<CR>
+"nnoremap <leader>, :tabp<CR>
 
 " nerdcommenter commenting  
 map <leader>/ <plug>NERDCommenterToggle

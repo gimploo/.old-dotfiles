@@ -120,7 +120,7 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # New prompt
-export PS1='\[\033[01;32m\]\u \[\033[01;34m\]\w\[\033[00m\] $ '
+export PS1='\[\033[01;32m\]\u \[\033[01;34m\]\W\[\033[00m\] $ '
 
 # Disable ctrl-s and ctrl-q
 stty -ixon 
