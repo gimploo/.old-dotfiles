@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/gokul/.vim'
 let g:netrw_dirhist_1='/mnt/c/Users/Gokul/OneDrive/Documents/dumb projects/scuffed_whatsapp'
 let g:netrw_dirhist_0='/home/gokul/.git'
 let g:netrw_dirhist_9='/home/gokul/.git/branches'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_6='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2/DS/l
 let g:netrw_dirhist_5='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2/DS/lab/graph'
 let g:netrw_dirhist_4='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2/DS/lab'
 let g:netrw_dirhist_3='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2/DS'
-let g:netrw_dirhist_2='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2'
