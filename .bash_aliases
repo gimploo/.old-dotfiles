@@ -5,6 +5,7 @@ alias asiet='cd ~/Documents/Shankara/year2/; clear'
 alias course='cd ~/Documents/tutorials/; clear'
 alias cwd='pwd|clip.exe'
 alias gamer='cd ~/Documents/gameDev/HandmadeHero/'
+alias dumb='cd ~/Documents/dumb\ projects'
 
 # Calling windows executables
 alias wordpad='/mnt/c/Program\ Files/Windows\ NT/Accessories/wordpad.exe'
