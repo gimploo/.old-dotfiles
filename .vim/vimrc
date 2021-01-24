@@ -78,7 +78,7 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
 " Delete a buffer without closing the split window
-nnoremap <leader>d :bp\|bd #<CR>
+nnoremap <silent> <leader>d :bp\|bd #<CR>
 
 " Jumping between buffers
 nnoremap <leader>. :bn<CR>
@@ -163,7 +163,6 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <C-space>coc#refresh()
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -171,10 +170,10 @@ function! s:check_back_space() abort
 endfunction
 
 " GoTo code navigation.
-nmap <buffer> <leader>gd <plug>(coc-definition)
-nmap <buffer> <leader>gy <plug>(coc-type-definition)
-nmap <buffer> <leader>gi <plug>(coc-implementation)
-nmap <buffer> <leader>gr <plug>(coc-references)
+nmap <leader>gd <plug>(coc-definition)
+nmap <leader>gy <plug>(coc-type-definition)
+nmap <leader>gi <plug>(coc-implementation)
+nmap <leader>gr <plug>(coc-references)
 
 " Jump to errors
 nmap [g <plug>(coc-diagnostic-prev)
