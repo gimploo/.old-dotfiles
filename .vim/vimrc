@@ -170,17 +170,17 @@ function! s:check_back_space() abort
 endfunction
 
 " GoTo code navigation.
-nmap <leader>gd <plug>(coc-definition)
-nmap <leader>gy <plug>(coc-type-definition)
-nmap <leader>gi <plug>(coc-implementation)
-nmap <leader>gr <plug>(coc-references)
+nmap <silent> <leader>gd <plug>(coc-definition)
+nmap <silent> <leader>gy <plug>(coc-type-definition)
+nmap <silent> <leader>gi <plug>(coc-implementation)
+nmap <silent> <leader>gr <plug>(coc-references)
 
 " Jump to errors
 nmap [g <plug>(coc-diagnostic-prev)
 nmap ]g <plug>(coc-diagnostic-next)
 
 " Restart coc server
-nnoremap <buffer> <leader>cr :CocRestart
+nnoremap <leader>cr :CocRestart<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
