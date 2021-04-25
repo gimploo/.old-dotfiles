@@ -193,3 +193,8 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Exculsive setup for C development (linux dev style)
+autocmd BufRead,BufNewFile *.h set filetype=c
+autocmd Filetype c setlocal shiftwidth=8 softtabstop=8 noexpandtab cindent cc=80
+autocmd Filetype h setlocal shiftwidth=8 softtabstop=8 noexpandtab cindent cc=80
+
