@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2/Java/extras'
+let g:netrw_dirhist_6='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2/Java/extras/q03'
+let g:netrw_dirhist_5='/mnt/c/Users/Gokul/OneDrive/Documents/Shankara/year2/Java/extras'
+let g:netrw_dirhist_4='/home/gokul/.vim/plugged'
+let g:netrw_dirhist_3='/home/gokul/.vim'
+let g:netrw_dirhist_2='/mnt/c/Users/Gokul/OneDrive/Documents/.dotfiles'
+let g:netrw_dirhist_1='/mnt/c/Users/Gokul/OneDrive/Documents'
+let g:netrw_dirhist_0='/mnt/c/Users/Gokul/OneDrive/Documents/.dotfiles'
+let g:netrw_dirhist_9='/mnt/c/Users/Gokul/OneDrive/Documents/.dotfiles/.vim'
+let g:netrw_dirhist_8='/mnt/c/Users/Gokul/OneDrive/Documents/.dotfiles/.vim/plugged/coc.nvim'
