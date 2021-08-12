@@ -53,27 +53,40 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
+" Access colors present in 256 colorspace
+let base16colorspace=256
 
 " Pluggins 
 call plug#begin('~/.config/nvim/plugged')
 
-"Plug 'nvim-telescope/telescope.nvim'
 Plug 'morhetz/gruvbox'
+Plug 'chriskempson/vim-tomorrow-theme'
+
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'suan/vim-instant-markdown', {'for':'markdown'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"Plug 'vimwiki/vimwiki'
+Plug 'tikhomirov/vim-glsl'
 Plug 'sakshamgupta05/vim-todo-highlight'
 Plug 'mbbill/undotree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
+" fzf.vim plugin
+map ; :Files<CR>
+
+"  Glsl : setting color scheme
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+
 " Setting the colorscheme and the background color
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
-set background=dark
+"let g:gruvbox_contrast_dark = 'hard'
+"colorscheme gruvbox
+"set background=dark
+colorscheme Tomorrow-Night-Bright
 
 " Remaped the jumps bw splited windows 
 nnoremap <leader>h :wincmd h<CR>
@@ -145,17 +158,26 @@ let g:todo_highlight_config = {
 " NOTE(hell):
 
 " -----------------------------------------------------------------------------
-" Airline config
+" Lightline & Lightline-bufferline config
 " -----------------------------------------------------------------------------
 
-" enable tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ' '
-let g:airline#extensions#tabline#righ_alt_sep = '|'
+let g:lightline = {
+      \ 'colorscheme': 'default',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ }
+      \ }
 
-let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
 " -----------------------------------------------------------------------------
@@ -198,8 +220,4 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Exculsive setup for C development (linux dev style)
-"autocmd BufRead,BufNewFile *.h set filetype=c
-"autocmd Filetype c setlocal shiftwidth=8 softtabstop=8 noexpandtab cindent cc=80
-"autocmd Filetype h setlocal shiftwidth=8 softtabstop=8 noexpandtab cindent cc=80
 
