@@ -12,6 +12,7 @@ set noswapfile
 let mapleader = " "
 set nowrap
 set signcolumn=yes
+set colorcolumn=80
 
 filetype plugin on
 filetype indent on 
@@ -56,6 +57,9 @@ endif
 " Access colors present in 256 colorspace
 let base16colorspace=256
 
+" Custom syntax highlight for C
+au Syntax c	source $VIMRUNTIME/syntax/c.vim
+
 " Pluggins 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -64,7 +68,9 @@ Plug 'chriskempson/vim-tomorrow-theme'
 
 Plug 'neoclide/coc.nvim', {'branch':'release'}
 Plug 'suan/vim-instant-markdown', {'for':'markdown'}
-Plug 'tikhomirov/vim-glsl'
+
+Plug 'Eric-Song-Nop/vim-glslx'
+
 Plug 'sakshamgupta05/vim-todo-highlight'
 Plug 'mbbill/undotree'
 Plug 'scrooloose/nerdcommenter'
@@ -80,13 +86,17 @@ call plug#end()
 map s :Files<CR>
 
 "  Glsl : setting color scheme
-autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glslx
 
 " Setting the colorscheme and the background color
 "let g:gruvbox_contrast_dark = 'hard'
 "colorscheme gruvbox
 "set background=dark
 colorscheme Tomorrow-Night-Bright
+
+" Source vimrc
+noremap <leader>v :so $MYVIMRC<CR>
+
 
 " Remaped the jumps bw splited windows 
 nnoremap <leader>h :wincmd h<CR>
@@ -128,8 +138,8 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 let g:coc_global_extensions = [
             \ 'coc-java',
             \ 'coc-python',
+            \ 'coc-ccls',
             \ 'coc-json',
-            \ 'coc-clangd',
             \ 'coc-sh',
             \]
 "-----------------------------------------------------------------------------
@@ -138,11 +148,11 @@ let g:coc_global_extensions = [
 
 "\'gui_bg_color': '#1d2021' 
 let g:todo_highlight_config = {
-        \'TODO': {
+        \'FIXME': {
             \'gui_bg_color': '#ff3300',
             \'gui_fg_color': '#ffffff'
         \},
-        \'FIXME': {
+        \'TODO': {
             \'gui_bg_color': '#ff6600',
             \'gui_fg_color': '#ffffff'
         \},
@@ -238,7 +248,7 @@ nmap [g <plug>(coc-diagnostic-prev)
 nmap ]g <plug>(coc-diagnostic-next)
 
 " Restart coc server
-nnoremap <leader>cr :CocRestart<CR>
+nnoremap <leader>r :CocRestart<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -250,5 +260,3 @@ function! s:show_documentation()
     call CocActionAsync('doHover')
   endif
 endfunction
-
-
